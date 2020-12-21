@@ -10,28 +10,28 @@ public class Supervisor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long supervisor_id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "supervisorName")
+    private String supervisorName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "supervisor")
     private Set<Student> students;
 
-    public Long getId() {
-        return id;
+    public Long getSupervisor_id() {
+        return supervisor_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setSupervisor_id(Long id) {
+        this.supervisor_id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getSupervisorName() {
+        return supervisorName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSupervisorName(String name) {
+        this.supervisorName = name;
     }
 
     public Set<Student> getStudents() {

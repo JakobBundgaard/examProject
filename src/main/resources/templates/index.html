@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Hey Jake</h1>
+
+<form  action="/home/addStudent" method="post"  th:each="student : ${students}">
+    <h3 th:text="${owner.firstName}"></h3>
+    <input type="hidden" th:value="${owner.id}" name="id">
+    <select name ="dogid">
+        <option th:each="dog : ${ownerlessdogs}" th:value="${dog.id}" th:text="${dog.name}"></option>
+    </select>
+    <input type="submit" value="Gem">
+</form>
+
+
+<div align="left" class="container">
+    <h1>Add New Student</h1>
+
+    <form method="post" action="/home/addStudent">
+
+        <label>Name</label>
+        <input type="text" name="name">
+        <br>
+        <label>E-mail</label>
+        <input type="text" name="email">
+        <br>
+        <label>Supervisor</label>
+
+        <select name ="supervisor_id">
+            <option th:each="supervisor : ${supervisors}" th:text="${supervisor.supervisorName}"></option>
+        </select>
+
+        <br>
+        <input type="submit" value="Save" style="width: 55px">
+    </form>
+
+
+    <div align="left" class="container">
+        <h1>Students</h1>
+
+        <table class="table table-dark table-bordered " id="myTable">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Supervisor</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.email}"></td>
+                <td th:text="${student.getSupervisor}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
