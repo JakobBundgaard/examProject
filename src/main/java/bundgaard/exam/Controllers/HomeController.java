@@ -31,14 +31,5 @@ public class HomeController {
         model.addAttribute("supervisors", supervisorService.findAll());
         return "index";
     }
-
-    @RequestMapping(value = "/home/addStudent", method = RequestMethod.POST)
-    public String addStudent(Student student, @RequestParam("supervisorName") String supervisorName) {
-        Optional<Supervisor> supervisor = supervisorService.findById(Long.parseLong(supervisorName));
-        Optional<Student> student1 = studentService.findById(student.getId());
-        studentService.save(student);
-        return "redirect:/home";
-    }
-
-
 }
+

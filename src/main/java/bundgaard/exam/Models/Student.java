@@ -2,6 +2,8 @@ package bundgaard.exam.Models;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -21,6 +23,13 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "supervisor_id")
     private Supervisor supervisor;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student() {
+    }
 
 
     public Long getId() {
@@ -53,5 +62,10 @@ public class Student {
 
     public void setSupervisor(Supervisor supervisor) {
         this.supervisor = supervisor;
+    }
+
+    public void addStudent(String name) {
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(name));
     }
 }

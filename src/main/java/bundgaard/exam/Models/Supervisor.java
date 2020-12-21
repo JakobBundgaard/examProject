@@ -1,6 +1,8 @@
 package bundgaard.exam.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,6 +17,7 @@ public class Supervisor {
     @Column(name = "supervisorName")
     private String supervisorName;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "supervisor")
     private Set<Student> students;
 
@@ -40,5 +43,9 @@ public class Supervisor {
 
     public void setStudents(Set<Student> students) {
         this.students = students;
+    }
+
+    public String toString() {
+        return supervisorName;
     }
 }

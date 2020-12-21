@@ -4,6 +4,7 @@ package bundgaard.exam.Service.SpringDatajpa;
 import bundgaard.exam.Models.Student;
 import bundgaard.exam.Repositories.StudentRepository;
 import bundgaard.exam.Service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Service
 public class StudentJPA implements StudentService {
 
+    public Set<Student> studentList;
     private final StudentRepository studentRepository;
 
     public StudentJPA(StudentRepository studentRepository) {

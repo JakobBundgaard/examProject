@@ -4,6 +4,7 @@ import bundgaard.exam.Models.Student;
 import bundgaard.exam.Models.Supervisor;
 import bundgaard.exam.Repositories.SupervisorRepository;
 import bundgaard.exam.Service.SupervisorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -11,6 +12,7 @@ import java.util.*;
 
 @Service
 public class SupervisorJPA implements SupervisorService {
+
 
     private final SupervisorRepository supervisorRepository;
 
