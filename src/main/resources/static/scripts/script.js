@@ -54,6 +54,7 @@ function createStudent(name, email, supervisor_id){
         contentType:"application/JSON",
         data: JSON.stringify(object1),
         success:function (data){
+            location.reload();
             /*$("#student").prepend("<div>" + data.student.pop().name +
                 "</div>")
             $("#email").prepend("<div>" + data.email.pop().email + "</div>")

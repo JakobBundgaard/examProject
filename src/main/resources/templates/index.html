@@ -15,9 +15,6 @@
     <h1>Add New Student</h1>
 
 
-
-
-
     <form id="createform">
 
         <label>Name</label>
@@ -31,7 +28,7 @@
             <option th:each="supervisor : ${supervisors}" th:value="${supervisor.supervisor_id}" th:text="${supervisor.toString()}"></option>
         </select>
         <br>
-        <button onclick="location.reload();"><input type="submit" value="Add Student" ></button>
+        <input type="submit" value="Add Student" >
         <div id="status"></div>
         <div id="users"></div>
     </form>
@@ -62,12 +59,11 @@
     </div>
 </div>
 
-
-
 <script type="text/javascript">
     checkQuery();
     getStudent();
     preventStudent($("#createform"));
 </script>
+
 </body>
 </html>
