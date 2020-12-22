@@ -64,8 +64,5 @@ public class Student {
         this.supervisor = supervisor;
     }
 
-    public void addStudent(String name) {
-        List<Student> students = new ArrayList<>();
-        students.add(new Student(name));
-    }
+
 }

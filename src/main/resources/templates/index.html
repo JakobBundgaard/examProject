@@ -31,7 +31,7 @@
             <option th:each="supervisor : ${supervisors}" th:value="${supervisor.supervisor_id}" th:text="${supervisor.toString()}"></option>
         </select>
         <br>
-        <input type="submit" value="Save" style="width: 55px">
+        <input type="submit" value="Add Student" >
         <div id="status"></div>
         <div id="users"></div>
     </form>
@@ -47,6 +47,8 @@
                 <th>Name</th>
                 <th>E-mail</th>
                 <th>Supervisor</th>
+                <th></th>
+
             </tr>
             </thead>
             <tbody>
@@ -54,12 +56,13 @@
                 <td id="tablename"></td>
                 <td id="tableemail"></td>
                 <td id="tablesupervisor"></td>
-
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+
 
 <script type="text/javascript">
     checkQuery();

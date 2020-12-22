@@ -5,6 +5,7 @@ import bundgaard.exam.Service.SpringDatajpa.StudentJPA;
 import bundgaard.exam.Service.SpringDatajpa.SupervisorJPA;
 import bundgaard.exam.Service.StudentService;
 import bundgaard.exam.Service.SupervisorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StudentController {
 
+
     private StudentJPA studentJPA;
     private SupervisorJPA supervisorJPA;
 
@@ -23,7 +25,9 @@ public class StudentController {
         this.supervisorJPA = supervisorJPA;
     }
 
-    @PostMapping("api/studentservice")
+
+
+    @GetMapping("api/studentservice")
     public ResponseEntity<StudentService> getSearchResults(){
         studentJPA.studentList = studentJPA.findAll();
         System.out.println("api/studentservice kaldt med: ");
@@ -35,5 +39,10 @@ public class StudentController {
         System.out.println("api/createstudent kaldt med ");
         studentJPA.save(student);
         return ResponseEntity.ok(studentJPA);
+    }
+
+    @PostMapping("/api/deleteStudent")
+    public void deleteStudentById(@RequestBody Student student){
+        studentJPA.deleteById(student.getId());
     }
 }

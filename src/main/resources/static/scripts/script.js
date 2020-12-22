@@ -21,7 +21,7 @@ function getStudent(){
 
     $.ajax({
         url:"/api/studentservice",
-        type:"POST",
+        type:"GET",
         contentType:"application/JSON",
         success: function (data){
             $.each(data.studentList, function (index,value){
@@ -34,7 +34,7 @@ function getStudent(){
                     "</div>");
 
             })
-            $("#status").html("Server: Student OK");
+           // $("#status").html("Server: Student OK");
         },
         error:function (data){
             console.log("ERROR i svar fra server");
@@ -42,6 +42,7 @@ function getStudent(){
         }
     });
 }
+
 
 
 function createStudent(name, email, supervisor_id){

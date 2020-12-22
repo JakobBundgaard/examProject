@@ -15,6 +15,8 @@ import java.util.Optional;
 @Controller
 public class HomeController {
 
+
+
     private StudentService studentService;
     private SupervisorService supervisorService;
 
@@ -27,7 +29,7 @@ public class HomeController {
 
     @GetMapping("/home")
     public String index(Model model) {
-        model.addAttribute("students", studentService.findAll());
+        //model.addAttribute("students", studentService.findAll());
         model.addAttribute("supervisors", supervisorService.findAll());
         return "index";
     }
