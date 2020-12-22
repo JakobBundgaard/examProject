@@ -6,12 +6,6 @@ function preventStudent(form){
     })
 }
 
-function preventCreateUserFromSending(form){
-    form.submit(function (event){
-        event.preventDefault(); //forhindre at formen bliver sendt
-        createStudent($("#studentName").val()) // hent value fra <input>
-    });
-}
 
 function getStudent(){
     console.log("getStudent er kaldt");
@@ -71,6 +65,8 @@ function createStudent(name, email, supervisor_id){
         }
     });
 }
+
+
 
 
 function checkQuery(){

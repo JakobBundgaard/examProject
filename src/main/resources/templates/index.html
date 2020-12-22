@@ -31,7 +31,7 @@
             <option th:each="supervisor : ${supervisors}" th:value="${supervisor.supervisor_id}" th:text="${supervisor.toString()}"></option>
         </select>
         <br>
-        <input type="submit" value="Add Student" >
+        <button onclick="location.reload();"><input type="submit" value="Add Student" ></button>
         <div id="status"></div>
         <div id="users"></div>
     </form>
@@ -41,7 +41,7 @@
     <div align="left" class="container">
         <h1>Students</h1>
 
-        <table class="table table-dark table-bordered " id="myTable">
+        <table class="table table-dark table-bordered " id="myTable" >
             <thead>
             <tr>
                 <th>Name</th>

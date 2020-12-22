@@ -20,6 +20,7 @@ public class StudentController {
     private StudentJPA studentJPA;
     private SupervisorJPA supervisorJPA;
 
+
     public StudentController(StudentJPA studentJPA, SupervisorJPA supervisorJPA) {
         this.studentJPA = studentJPA;
         this.supervisorJPA = supervisorJPA;
